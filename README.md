@@ -3,6 +3,9 @@ Hi, I’m Praphull
 🎓 B.Tech CSE (AI & ML), 3rd Year  
 🤖 Passionate about Machine Learning, AI, and emerging technologies  
 
+# Profile View:
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=praphulln19&label=Profile%20views&color=0e75b6&style=flat" alt="Praphull"/> </p>
+
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/praphulln19)
 
