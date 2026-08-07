@@ -54,8 +54,6 @@
 
 ## GitHub Stats
 
-![stats](assets/github-stats.svg)
-
 ![streak](assets/streak.svg)
 
 ![langs](assets/top-langs.svg)
