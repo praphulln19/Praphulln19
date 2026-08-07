@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+  <rect x="0.5" y="0.5" width="494" height="194" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
+  <text x="24" y="40" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="20" font-weight="700">Praphull Kumar's GitHub Stats</text>
+  <text x="24" y="82" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="15">Private-aware stats will appear here after adding PROFILE_STATS_TOKEN.</text>
+  <text x="24" y="116" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">The workflow keeps this card token-backed so private data is never exposed.</text>
+</svg>
