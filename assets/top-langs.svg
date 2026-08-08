@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="142" viewBox="0 0 480 142">
   <rect x="0.5" y="0.5" width="479" height="141" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
   <text x="24" y="32" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="700">Most Used Languages</text>
-  <g transform="translate(24 46)"><rect x="0.00" y="0" width="304.92" height="8" fill="#DA5B0B"/><rect x="304.92" y="0" width="43.28" height="8" fill="#f1e05a"/><rect x="348.20" y="0" width="28.63" height="8" fill="#663399"/><rect x="376.84" y="0" width="26.71" height="8" fill="#3572A5"/><rect x="403.54" y="0" width="24.31" height="8" fill="#e34c26"/><rect x="427.86" y="0" width="4.14" height="8" fill="#3178c6"/></g>
+  <g transform="translate(24 46)"><rect x="0.00" y="0" width="304.41" height="8" fill="#DA5B0B"/><rect x="304.41" y="0" width="43.31" height="8" fill="#f1e05a"/><rect x="347.72" y="0" width="28.75" height="8" fill="#663399"/><rect x="376.47" y="0" width="26.66" height="8" fill="#3572A5"/><rect x="403.13" y="0" width="24.27" height="8" fill="#e34c26"/><rect x="427.41" y="0" width="4.59" height="8" fill="#3178c6"/></g>
   <circle cx="24" cy="74" r="5" fill="#DA5B0B"/>
     <text x="38" y="78" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">Jupyter Notebook</text>
-    <text x="174" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">70.6%</text><circle cx="252" cy="74" r="5" fill="#f1e05a"/>
+    <text x="174" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">70.5%</text><circle cx="252" cy="74" r="5" fill="#f1e05a"/>
     <text x="266" y="78" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">JavaScript</text>
     <text x="402" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">10.0%</text><circle cx="24" cy="98" r="5" fill="#663399"/>
     <text x="38" y="102" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">CSS</text>
-    <text x="174" y="102" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">6.6%</text><circle cx="252" cy="98" r="5" fill="#3572A5"/>
+    <text x="174" y="102" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">6.7%</text><circle cx="252" cy="98" r="5" fill="#3572A5"/>
     <text x="266" y="102" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">Python</text>
     <text x="402" y="102" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">6.2%</text><circle cx="24" cy="122" r="5" fill="#e34c26"/>
     <text x="38" y="126" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">HTML</text>
     <text x="174" y="126" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">5.6%</text><circle cx="252" cy="122" r="5" fill="#3178c6"/>
     <text x="266" y="126" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">TypeScript</text>
-    <text x="402" y="126" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">1.0%</text>
+    <text x="402" y="126" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">1.1%</text>
 </svg>
