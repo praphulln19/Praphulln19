@@ -58,7 +58,7 @@
 
 ![langs](assets/top-langs.svg)
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=praphulln19&theme=github-compact&hide_border=true&bg_color=00000000&color=8b949e&line=58a6ff&point=58a6ff&area=true&area_color=58a6ff" width="100%" alt="activity" />
+<img src="https://ghchart.rshah.org/58a6ff/praphulln19" width="100%" alt="activity" />
 
 <!-- SVGs are auto-updated every 6h by .github/workflows/update-stats.yml -->
 ## Connect
