@@ -107,10 +107,19 @@ jobs:
             </svg>\n`);
           };
 
+          const writeActivityFallback = (message) => {
+            fs.writeFileSync('assets/activity-graph.svg', `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
+              <rect x="0.5" y="0.5" width="494" height="194" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
+              <text x="24" y="40" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="700">Contribution Activity</text>
+              <text x="24" y="80" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14">${escapeHtml(message)}</text>
+            </svg>\n`);
+          };
+
           (async () => {
           if (!token) {
             writeStatsFallback('Add PROFILE_STATS_TOKEN to include private contributions.');
             writeLangFallback('Add PROFILE_STATS_TOKEN to include private repositories.');
+            writeActivityFallback('Add PROFILE_STATS_TOKEN to include private contributions.');
             process.exit(0);
           }
 
@@ -124,7 +133,12 @@ jobs:
                   followers { totalCount }
                   repositories(privacy: PUBLIC, first: 1) { totalCount }
                   contributionsCollection {
-                    contributionCalendar { totalContributions }
+                    contributionCalendar {
+                      totalContributions
+                      weeks {
+                        contributionDays { date contributionCount }
+                      }
+                    }
                     totalCommitContributions
                     restrictedContributionsCount
                   }
@@ -150,6 +164,44 @@ jobs:
             <text x="330" y="137" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="15">Public repos: ${user.repositories.totalCount}</text>
             <text x="24" y="166" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="15">Followers: ${user.followers.totalCount}</text>
           </svg>\n`);
+
+          const days = contributions.contributionCalendar.weeks.flatMap((week) => week.contributionDays);
+          if (days.length === 0) {
+            writeActivityFallback('No contribution data available.');
+          } else {
+            const counts = days.map((day) => day.contributionCount);
+            const maxCount = Math.max(1, ...counts);
+
+            const width = 495;
+            const height = 195;
+            const padLeft = 24;
+            const padRight = 24;
+            const padTop = 56;
+            const padBottom = 30;
+            const plotWidth = width - padLeft - padRight;
+            const plotHeight = height - padTop - padBottom;
+
+            const points = counts.map((count, index) => {
+              const x = padLeft + (counts.length === 1 ? 0 : (index / (counts.length - 1)) * plotWidth);
+              const y = padTop + plotHeight - (count / maxCount) * plotHeight;
+              return [x, y];
+            });
+
+            const linePath = points
+              .map(([x, y], index) => `${index === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`)
+              .join(' ');
+            const baseline = (padTop + plotHeight).toFixed(2);
+            const areaPath = `${linePath} L${points[points.length - 1][0].toFixed(2)},${baseline} L${points[0][0].toFixed(2)},${baseline} Z`;
+
+            fs.writeFileSync('assets/activity-graph.svg', `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+              <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
+              <text x="24" y="34" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="700">Contribution Activity</text>
+              <path d="${areaPath}" fill="#58a6ff" fill-opacity="0.15" stroke="none"/>
+              <path d="${linePath}" fill="none" stroke="#58a6ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <text x="24" y="${height - 10}" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11">${escapeHtml(days[0].date)}</text>
+              <text x="${width - 24}" y="${height - 10}" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="11" text-anchor="end">${escapeHtml(days[days.length - 1].date)}</text>
+            </svg>\n`);
+          }
 
           const repos = await getAllPages('https://api.github.com/user/repos?visibility=all&affiliation=owner');
           const languageTotals = new Map();
@@ -200,17 +252,18 @@ jobs:
             console.error(error);
             writeStatsFallback('Stats update failed. Check the workflow logs.');
             writeLangFallback('Language update failed. Check the workflow logs.');
+            writeActivityFallback('Activity graph update failed. Check the workflow logs.');
           });
           NODE
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet -- assets/streak.svg assets/top-langs.svg assets/github-stats.svg; then
+          if git diff --quiet -- assets/streak.svg assets/top-langs.svg assets/github-stats.svg assets/activity-graph.svg; then
             echo "No SVG updates detected"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/streak.svg assets/top-langs.svg assets/github-stats.svg
+          git add assets/streak.svg assets/top-langs.svg assets/github-stats.svg assets/activity-graph.svg
           git commit -m "chore: update GitHub stats SVGs"
           git push
