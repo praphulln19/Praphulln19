@@ -121,7 +121,7 @@ jobs:
 
           const niceStep = (max) => {
             if (max <= 0) return 1;
-            const roughStep = max / 5;
+            const roughStep = Math.max(max / 6, 1);
             const magnitude = Math.pow(10, Math.floor(Math.log10(roughStep)));
             const residual = roughStep / magnitude;
             let niceResidual;
@@ -193,10 +193,10 @@ jobs:
             const niceMax = Math.max(step, Math.ceil(maxCount / step) * step);
 
             const width = 495;
-            const height = 230;
-            const padLeft = 40;
-            const padRight = 16;
-            const padTop = 40;
+            const height = 200;
+            const padLeft = 38;
+            const padRight = 12;
+            const padTop = 16;
             const padBottom = 42;
             const plotWidth = width - padLeft - padRight;
             const plotHeight = height - padTop - padBottom;
@@ -225,28 +225,24 @@ jobs:
               yLabels.push(`<text x="${padLeft - 8}" y="${(Number(y) + 3).toFixed(2)}" fill="${axisLabel}" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="end">${value}</text>`);
             }
 
-            const labelEvery = Math.ceil(days.length / 12);
             const vGridLines = [];
             const xLabels = [];
             days.forEach((day, index) => {
               const x = xAt(index).toFixed(2);
-              vGridLines.push(`<line x1="${x}" y1="${padTop}" x2="${x}" y2="${height - padBottom}" stroke="${gridColor}" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="2,3"/>`);
-              if (index % labelEvery === 0 || index === days.length - 1) {
-                const dayOfMonth = Number(day.date.slice(8, 10));
-                xLabels.push(`<text x="${x}" y="${height - padBottom + 16}" fill="${axisLabel}" font-family="Segoe UI, Ubuntu, sans-serif" font-size="9" text-anchor="middle">${dayOfMonth}</text>`);
-              }
+              vGridLines.push(`<line x1="${x}" y1="${padTop}" x2="${x}" y2="${height - padBottom}" stroke="${gridColor}" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="2,3"/>`);
+              const dayOfMonth = Number(day.date.slice(8, 10));
+              xLabels.push(`<text x="${x}" y="${height - padBottom + 15}" fill="${axisLabel}" font-family="Segoe UI, Ubuntu, sans-serif" font-size="8" text-anchor="middle">${dayOfMonth}</text>`);
             });
 
             const markers = points
-              .map(([x, y]) => `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="3" fill="${bg}" stroke="${cyan}" stroke-width="1.5"/>`)
+              .map(([x, y]) => `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="3" fill="#ffffff"/>`)
               .join('');
 
             fs.writeFileSync('assets/activity-graph.svg', `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
               <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="4.5" fill="${bg}" stroke="${gridColor}" stroke-opacity="0.35"/>
-              <text x="24" y="24" fill="${cyan}" font-family="Segoe UI, Ubuntu, sans-serif" font-size="14" font-weight="700">Contribution Activity (Last 30 Days)</text>
               ${hGridLines.join('')}
               ${vGridLines.join('')}
-              <path d="${linePath}" fill="none" stroke="${cyan}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="${linePath}" fill="none" stroke="${cyan}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
               ${markers}
               ${yLabels.join('')}
               ${xLabels.join('')}
