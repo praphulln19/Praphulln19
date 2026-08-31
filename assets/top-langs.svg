@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="142" viewBox="0 0 480 142">
   <rect x="0.5" y="0.5" width="479" height="141" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
   <text x="24" y="32" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="700">Most Used Languages</text>
-  <g transform="translate(24 46)"><rect x="0.00" y="0" width="275.49" height="8" fill="#DA5B0B"/><rect x="275.49" y="0" width="50.78" height="8" fill="#3178c6"/><rect x="326.26" y="0" width="33.54" height="8" fill="#f1e05a"/><rect x="359.80" y="0" width="26.16" height="8" fill="#663399"/><rect x="385.96" y="0" width="24.13" height="8" fill="#3572A5"/><rect x="410.09" y="0" width="21.91" height="8" fill="#e34c26"/></g>
+  <g transform="translate(24 46)"><rect x="0.00" y="0" width="275.47" height="8" fill="#DA5B0B"/><rect x="275.47" y="0" width="50.80" height="8" fill="#3178c6"/><rect x="326.27" y="0" width="33.54" height="8" fill="#f1e05a"/><rect x="359.80" y="0" width="26.16" height="8" fill="#663399"/><rect x="385.97" y="0" width="24.13" height="8" fill="#3572A5"/><rect x="410.09" y="0" width="21.91" height="8" fill="#e34c26"/></g>
   <circle cx="24" cy="74" r="5" fill="#DA5B0B"/>
     <text x="38" y="78" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">Jupyter Notebook</text>
     <text x="174" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">63.8%</text><circle cx="252" cy="74" r="5" fill="#3178c6"/>
