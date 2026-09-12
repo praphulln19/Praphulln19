@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="142" viewBox="0 0 480 142">
   <rect x="0.5" y="0.5" width="479" height="141" rx="4.5" fill="#151515" stroke="#E4E2E2"/>
   <text x="24" y="32" fill="#58a6ff" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="700">Most Used Languages</text>
-  <g transform="translate(24 46)"><rect x="0.00" y="0" width="267.19" height="8" fill="#DA5B0B"/><rect x="267.19" y="0" width="60.37" height="8" fill="#3178c6"/><rect x="327.56" y="0" width="33.61" height="8" fill="#f1e05a"/><rect x="361.17" y="0" width="26.01" height="8" fill="#663399"/><rect x="387.18" y="0" width="23.41" height="8" fill="#3572A5"/><rect x="410.59" y="0" width="21.41" height="8" fill="#e34c26"/></g>
+  <g transform="translate(24 46)"><rect x="0.00" y="0" width="267.06" height="8" fill="#DA5B0B"/><rect x="267.06" y="0" width="60.56" height="8" fill="#3178c6"/><rect x="327.61" y="0" width="33.59" height="8" fill="#f1e05a"/><rect x="361.20" y="0" width="26.00" height="8" fill="#663399"/><rect x="387.20" y="0" width="23.40" height="8" fill="#3572A5"/><rect x="410.60" y="0" width="21.40" height="8" fill="#e34c26"/></g>
   <circle cx="24" cy="74" r="5" fill="#DA5B0B"/>
     <text x="38" y="78" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">Jupyter Notebook</text>
-    <text x="174" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">61.9%</text><circle cx="252" cy="74" r="5" fill="#3178c6"/>
+    <text x="174" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">61.8%</text><circle cx="252" cy="74" r="5" fill="#3178c6"/>
     <text x="266" y="78" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">TypeScript</text>
     <text x="402" y="78" fill="#9E9E9E" font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">14.0%</text><circle cx="24" cy="98" r="5" fill="#f1e05a"/>
     <text x="38" y="102" fill="#f0f6fc" font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">JavaScript</text>
